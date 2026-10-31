@@ -2,11 +2,11 @@
 
 Support ticket #4471 merged 412 reports about dates as one issue. They are three. Counts follow the desk's own view as exported: a report is counted under the cause it is filed by.
 
-| problem | reports | ticket |
-|---|---|---|
-| shared parser reads dates month first | 379 (5 of them read as a one-day move, counted here by tenant) | [#1](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/1) |
-| booking-v3 form hint says MM/DD/YYYY | 33 | [#2](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/2) |
-| invite date moves by one day | 5 (the five footnoted above) | [#3](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/3) |
+| problem | reports | ticket | desk outcome (5 Oct) |
+|---|---|---|---|
+| shared parser reads dates month first | 379 (5 of them read as a one-day move, counted here by tenant) | [#1](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/1) | fixed: `fix(dates): parse dd/mm for eu locales` |
+| booking-v3 form hint says MM/DD/YYYY | 33 | [#2](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/2) | won't fix: booking-v3 form retired |
+| invite date moves by one day | 5 (the five footnoted above) | [#3](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/3) | not addressed; #4471 closed with these counted under the parser fix |
 
 The page about them, signed:
 

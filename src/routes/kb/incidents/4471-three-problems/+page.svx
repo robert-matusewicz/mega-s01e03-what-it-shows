@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · what it shows: three problems, not one'
 owner: Robert Matusewicz
-status: proposed
+status: closed
 reviewed: 2026-10-31
 signature: v1.eyJzdWIiOiI2NzciLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzQyOTUyNywiZXhwIjoxNzkzNTE1OTI3fQ.drod162zdbBJxnh9L7ynQohLg3G3UWFSHvJ7aRj7BoU
 ---
@@ -52,6 +52,19 @@ these five reports as a one-day move. The desk counts them where it files them, 
 cause, and footnotes them there; this page keeps that count and gives them a row and a ticket of their
 own. A day boundary is being crossed somewhere between the booking's time zone and the invite's.
 
+## What engineering did
+
+#4471 was closed on 5 October. Per problem:
+
+| problem | outcome | engineering's note |
+|---|---|---|
+| `parser` | fixed | `fix(dates): parse dd/mm for eu locales` |
+| `hint` | won't fix | booking-v3 form retired |
+| `one-day-move` | not addressed | the five reports went out with the parser fix, counted under it by tenant; nothing in the fix touches a day boundary |
+
+So the 379 parser reports have their fix, the 33 hint reports lose their cause with the form, and the
+five one-day moves are closed without a change. If they come back, they come back as a new ticket.
+
 ## How to tell them apart
 
 1. Is the date flipped (day and month swapped) or moved by one day? Moved: `one-day-move`.
@@ -64,8 +77,8 @@ the guess was right.
 
 ## What changes on the desk
 
-- Close nothing on #4471 when the parser fix ships. Check the `hint` and `one-day-move` tickets
-  separately; their reports will keep coming.
+- #4471 is closed. Watch for new one-day-move reports: nothing shipped for them, and matching on
+  subject will merge them into the next flipped-date ticket again.
 - Subject lines did not tell these apart, and bodies did. Reading one body per tenant and channel
   would have split the ticket in April.
 

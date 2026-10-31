@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.D-IyS56L.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.C6YvOwcq.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/fruYDLqp.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CSJK6obK.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CBfbihDK.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Cbdj2qAo.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.Dpa67bJU.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.-Z3BCJ7V.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BkYfdh9H.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BD3UdjSR.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/wnmzq4eU.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/TGQFHf5e.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.CCpBT1ka.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/ybC49tkz.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.BT_EyZUu.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BNmsc_8F.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.ZyK1eLKS.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/mzJPdNo9.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DFPV7QJw.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/M7cEM8C8.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
@@ -25,7 +25,7 @@
 		<link href="../../_app/immutable/assets/5.BeH-q3To.css" rel="stylesheet">
   </head>
   <body data-sveltekit-preload-data="hover">
-    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · what it shows: three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Robert Matusewicz</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says “one issue, one fix queued”. Its own table, built from the
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · what it shows: three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Robert Matusewicz</b></span> <span class="status closed svelte-e2jw2j">closed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says “one issue, one fix queued”. Its own table, built from the
 export at render time, has said otherwise since the day it was written: two causes, and a footnote
 about reports read as a one-day move. This page reads the same data, counts as the desk does, and gives each problem a ticket of its own.</p> <aside class="warn svelte-17bri61"><p>Three problems were merged into #4471 because their subject lines matched
 (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>). One queued fix covers one of them.</p><!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
@@ -39,23 +39,24 @@ touch it. Only booking-v3 tenants, only through the form.</p> <p><strong><code>o
 Monday in Toronto; 6 October shows as a Monday; a whole month is one day off. The desk’s notes mark
 these five reports as a one-day move. The desk counts them where it files them, under the tenant’s
 cause, and footnotes them there; this page keeps that count and gives them a row and a ticket of their
-own. A day boundary is being crossed somewhere between the booking’s time zone and the invite’s.</p> <h2>How to tell them apart</h2> <ol><li>Is the date flipped (day and month swapped) or moved by one day? Moved: <code>one-day-move</code>.</li> <li>Flipped and the report came through the booking form of a booking-v3 tenant: <code>hint</code>.</li> <li>Flipped, anything else: <code>parser</code>.</li></ol> <p>Intake’s tag cannot do this. It guesses from the reporter’s browser language, and the browser
+own. A day boundary is being crossed somewhere between the booking’s time zone and the invite’s.</p> <h2>What engineering did</h2> <p>#4471 was closed on 5 October. Per problem:</p> <table><thead><tr><th>problem</th><th>outcome</th><th>engineering’s note</th></tr></thead><tbody><tr><td><code>parser</code></td><td>fixed</td><td><code>fix(dates): parse dd/mm for eu locales</code></td></tr><tr><td><code>hint</code></td><td>won’t fix</td><td>booking-v3 form retired</td></tr><tr><td><code>one-day-move</code></td><td>not addressed</td><td>the five reports went out with the parser fix, counted under it by tenant; nothing in the fix touches a day boundary</td></tr></tbody></table> <p>So the 379 parser reports have their fix, the 33 hint reports lose their cause with the form, and the
+five one-day moves are closed without a change. If they come back, they come back as a new ticket.</p> <h2>How to tell them apart</h2> <ol><li>Is the date flipped (day and month swapped) or moved by one day? Moved: <code>one-day-move</code>.</li> <li>Flipped and the report came through the booking form of a booking-v3 tenant: <code>hint</code>.</li> <li>Flipped, anything else: <code>parser</code>.</li></ol> <p>Intake’s tag cannot do this. It guesses from the reporter’s browser language, and the browser
 language says nothing about the tenant’s booking form or channel. The table above counts how often
-the guess was right.</p> <h2>What changes on the desk</h2> <ul><li>Close nothing on #4471 when the parser fix ships. Check the <code>hint</code> and <code>one-day-move</code> tickets
-separately; their reports will keep coming.</li> <li>Subject lines did not tell these apart, and bodies did. Reading one body per tenant and channel
+the guess was right.</p> <h2>What changes on the desk</h2> <ul><li>#4471 is closed. Watch for new one-day-move reports: nothing shipped for them, and matching on
+subject will merge them into the next flipped-date ticket again.</li> <li>Subject lines did not tell these apart, and bodies did. Reading one body per tenant and channel
 would have split the ticket in April.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-176C-GCAD</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1ud2ba2 = {
+					__sveltekit_ujesgo = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.D-IyS56L.js"),
-						import("../../_app/immutable/entry/app.Dpa67bJU.js")
+						import("../../_app/immutable/entry/start.C6YvOwcq.js"),
+						import("../../_app/immutable/entry/app.-Z3BCJ7V.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
