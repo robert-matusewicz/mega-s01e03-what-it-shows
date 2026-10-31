@@ -22,8 +22,7 @@ signature: v1.eyJzdWIiOiI2NzciLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdC
 
 The [#4471 page](/kb/incidents/4471) says "one issue, one fix queued". Its own table, built from the
 export at render time, has said otherwise since the day it was written: two causes, and a footnote
-about reports read as a one-day move. This page reads the same data and gives each problem a count
-and a ticket of its own.
+about reports read as a one-day move. This page reads the same data, counts as the desk does, and gives each problem a ticket of its own.
 
 <Callout kind="warn">
 
@@ -49,8 +48,9 @@ touch it. Only booking-v3 tenants, only through the form.
 
 **`one-day-move` · the date moves by one day.** No flip. One meeting shows Tuesday in Lisbon and
 Monday in Toronto; 6 October shows as a Monday; a whole month is one day off. The desk's notes mark
-these reports as a one-day move, and the #4471 table hides them inside the tenant's cause. A day
-boundary is being crossed somewhere between the booking's time zone and the invite's.
+these five reports as a one-day move. The desk counts them where it files them, under the tenant's
+cause, and footnotes them there; this page keeps that count and gives them a row and a ticket of their
+own. A day boundary is being crossed somewhere between the booking's time zone and the invite's.
 
 ## How to tell them apart
 

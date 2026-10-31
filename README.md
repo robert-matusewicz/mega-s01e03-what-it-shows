@@ -1,12 +1,12 @@
 # MEGA.dev S01E03 · what it shows
 
-Support ticket #4471 merged 412 reports about dates as one issue. They are three:
+Support ticket #4471 merged 412 reports about dates as one issue. They are three. Counts follow the desk's own view as exported: a report is counted under the cause it is filed by.
 
 | problem | reports | ticket |
 |---|---|---|
-| shared parser reads dates month first | 374 | [#1](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/1) |
+| shared parser reads dates month first | 379 (5 of them read as a one-day move, counted here by tenant) | [#1](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/1) |
 | booking-v3 form hint says MM/DD/YYYY | 33 | [#2](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/2) |
-| invite date moves by one day | 5 | [#3](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/3) |
+| invite date moves by one day | 5 (the five footnoted above) | [#3](https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/3) |
 
 The page about them, signed:
 

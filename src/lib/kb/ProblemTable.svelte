@@ -10,7 +10,7 @@
 
   const split = $derived(splitTicket(reports as Report[], ticket, tenantOf, notes.oneDayMove));
   const groups = $derived(split.groups);
-  const agreement = $derived(intakeAgreement(groups));
+  const agreement = $derived(intakeAgreement(split.causes));
   const rawRows = (reports as Report[]).length;
 
   const WHAT: Record<string, string> = {
@@ -30,6 +30,7 @@
 <p class="sum">
   <strong>{split.merged.length}</strong> reports merged into #{ticket}
   ({rawRows} rows in the export, {rawRows - split.merged.length} of them repeats) ·
+  <strong>{split.causes.length}</strong> {split.causes.length === 1 ? 'cause' : 'causes'} the desk files by ·
   <strong>{groups.length}</strong> {groups.length === 1 ? 'problem' : 'problems'}
 </p>
 
@@ -41,7 +42,11 @@
     {#each groups as g (g.problem)}
       <tr>
         <td><code>{g.problem}</code></td>
-        <td><strong>{g.reports.length}</strong></td>
+        <td>
+          <strong>{g.reports.length}</strong>
+          {#if g.readAsOneDayMove}<span class="dim">({g.readAsOneDayMove} read as a one-day move, counted here by tenant)</span>{/if}
+          {#if g.alsoCountedAbove}<span class="dim">(also counted under their cause above)</span>{/if}
+        </td>
         <td>{WHAT[g.problem]}</td>
         <td>{g.tenants.length}</td>
         <td class="dim">{list(g.channels)}</td>
@@ -59,7 +64,12 @@
 </table>
 
 <p class="dim">
-  Intake's tag named the right problem for {agreement.agree} of {agreement.total} reports. The tag comes from the
+  Counts follow the desk's view as exported: a report is counted under the cause it is filed by, and the
+  one-day-move row lists the desk's own notes. The cause rows add up to the ticket; the last row does not add to them.
+</p>
+
+<p class="dim">
+  Intake's tag named the right cause for {agreement.agree} of {agreement.total} reports. The tag comes from the
   reporter's browser language; the problem comes from the tenant's locale, booking form and channel.
 </p>
 
