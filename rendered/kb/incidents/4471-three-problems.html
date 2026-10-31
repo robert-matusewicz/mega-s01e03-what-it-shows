@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_app/immutable/entry/start.DIIucJmM.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/fruYDLqp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Du7X0Pv-.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Cbdj2qAo.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.DZY_l-Ou.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BkYfdh9H.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BD3UdjSR.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/wnmzq4eU.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/TGQFHf5e.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.CCpBT1ka.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/ybC49tkz.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.CRyFm6HZ.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BQu9cBwp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DFPV7QJw.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BxbUfnXU.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 · what it shows: three problems, not one · support kb</title>
+		<link href="../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/5.BeH-q3To.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · what it shows: three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>robert-matusewicz</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says “one issue, one fix queued”. Its own table, built from the
+export at render time, has said otherwise since the day it was written: two causes, and a footnote
+about reports read as a one-day move. This page reads the same data and gives each problem a count
+and a ticket of its own.</p> <aside class="warn svelte-17bri61"><p>Three problems were merged into #4471 because their subject lines matched
+(<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>). One queued fix covers one of them.</p><!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
+  (427 rows in the export, 15 of them repeats) · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>what the reports say</th><th>tenants</th><th>channels</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td><strong>374</strong></td><td>month and day flipped: the shared parser reads month first</td><td>11</td><td class="dim svelte-1op6c6">app ×202 · email ×147 · form ×25</td><td class="dim svelte-1op6c6">2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/1">robert-matusewicz/mega-s01e03-what-it-shows#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td><strong>33</strong></td><td>month and day flipped: booking-v3 form hint says MM/DD/YYYY</td><td>3</td><td class="dim svelte-1op6c6">form ×33</td><td class="dim svelte-1op6c6">2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/2">robert-matusewicz/mega-s01e03-what-it-shows#2</a><!--]--></td></tr><tr><td><code>one-day-move</code></td><td><strong>5</strong></td><td>the date moves by one day, no flip</td><td>5</td><td class="dim svelte-1op6c6">email ×3 · app ×2</td><td class="dim svelte-1op6c6">2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/robert-matusewicz/mega-s01e03-what-it-shows/issues/3">robert-matusewicz/mega-s01e03-what-it-shows#3</a><!--]--></td></tr><!--]--></tbody></table> <p class="dim svelte-1op6c6">Intake's tag named the right problem for 369 of 412 reports. The tag comes from the
+  reporter's browser language; the problem comes from the tenant's locale, booking form and channel.</p> <details class="svelte-1op6c6"><summary class="svelte-1op6c6">report ids per problem</summary> <!--[--><p><code>parser</code> (374): <span class="ids svelte-1op6c6">R-41200, R-41201, R-41203, R-41204, R-41205, R-41206, R-41208, R-41210, R-41211, R-41212, R-41213, R-41214, R-41215, R-41216, R-41217, R-41218, R-41219, R-41220, R-41221, R-41222, R-41223, R-41224, R-41225, R-41227, R-41228, R-41229, R-41231, R-41232, R-41233, R-41234, R-41235, R-41237, R-41238, R-41239, R-41240, R-41242, R-41243, R-41244, R-41245, R-41246, R-41247, R-41248, R-41249, R-41250, R-41252, R-41253, R-41254, R-41255, R-41256, R-41257, R-41258, R-41260, R-41261, R-41263, R-41264, R-41265, R-41266, R-41267, R-41268, R-41269, R-41270, R-41271, R-41272, R-41273, R-41274, R-41276, R-41277, R-41278, R-41279, R-41280, R-41281, R-41282, R-41283, R-41284, R-41285, R-41286, R-41287, R-41288, R-41289, R-41290, R-41291, R-41292, R-41293, R-41295, R-41296, R-41297, R-41298, R-41299, R-41300, R-41301, R-41302, R-41303, R-41304, R-41306, R-41309, R-41310, R-41311, R-41312, R-41313, R-41314, R-41315, R-41316, R-41317, R-41318, R-41319, R-41320, R-41321, R-41322, R-41323, R-41324, R-41325, R-41327, R-41328, R-41329, R-41330, R-41331, R-41332, R-41333, R-41334, R-41335, R-41336, R-41337, R-41338, R-41339, R-41340, R-41341, R-41342, R-41343, R-41345, R-41346, R-41347, R-41348, R-41349, R-41350, R-41351, R-41352, R-41353, R-41354, R-41355, R-41356, R-41357, R-41358, R-41359, R-41360, R-41361, R-41362, R-41363, R-41364, R-41365, R-41367, R-41368, R-41369, R-41370, R-41371, R-41373, R-41374, R-41375, R-41376, R-41377, R-41378, R-41379, R-41380, R-41381, R-41382, R-41383, R-41385, R-41386, R-41388, R-41389, R-41390, R-41391, R-41392, R-41393, R-41394, R-41395, R-41397, R-41398, R-41399, R-41401, R-41402, R-41403, R-41404, R-41405, R-41408, R-41409, R-41410, R-41411, R-41412, R-41413, R-41414, R-41417, R-41419, R-41420, R-41421, R-41422, R-41423, R-41424, R-41425, R-41427, R-41429, R-41430, R-41431, R-41432, R-41433, R-41434, R-41435, R-41436, R-41437, R-41438, R-41440, R-41442, R-41443, R-41444, R-41445, R-41446, R-41447, R-41448, R-41450, R-41451, R-41452, R-41454, R-41455, R-41457, R-41458, R-41459, R-41461, R-41462, R-41463, R-41464, R-41465, R-41466, R-41467, R-41468, R-41469, R-41470, R-41471, R-41473, R-41474, R-41475, R-41476, R-41477, R-41478, R-41479, R-41480, R-41481, R-41482, R-41483, R-41484, R-41486, R-41487, R-41488, R-41489, R-41490, R-41491, R-41492, R-41494, R-41495, R-41496, R-41497, R-41498, R-41499, R-41500, R-41501, R-41502, R-41503, R-41504, R-41505, R-41506, R-41508, R-41509, R-41510, R-41511, R-41512, R-41513, R-41514, R-41515, R-41516, R-41517, R-41518, R-41519, R-41520, R-41521, R-41522, R-41523, R-41524, R-41525, R-41527, R-41528, R-41529, R-41530, R-41531, R-41532, R-41533, R-41534, R-41535, R-41536, R-41537, R-41538, R-41540, R-41541, R-41542, R-41543, R-41544, R-41545, R-41546, R-41547, R-41548, R-41549, R-41550, R-41551, R-41552, R-41553, R-41554, R-41555, R-41556, R-41557, R-41558, R-41559, R-41560, R-41561, R-41562, R-41563, R-41564, R-41565, R-41566, R-41567, R-41568, R-41569, R-41570, R-41571, R-41573, R-41574, R-41575, R-41576, R-41577, R-41578, R-41579, R-41580, R-41581, R-41583, R-41585, R-41586, R-41587, R-41588, R-41589, R-41590, R-41591, R-41592, R-41593, R-41594, R-41595, R-41596, R-41597, R-41598, R-41599, R-41600, R-41601, R-41602, R-41603, R-41604, R-41605, R-41606, R-41608, R-41609, R-41610, R-41611, R-41612, R-41613, R-41614, R-41615, R-41616, R-41617, R-41618, R-41619</span></p><p><code>hint</code> (33): <span class="ids svelte-1op6c6">R-41230, R-41241, R-41251, R-41259, R-41262, R-41275, R-41294, R-41305, R-41308, R-41366, R-41372, R-41384, R-41387, R-41396, R-41400, R-41406, R-41415, R-41416, R-41418, R-41428, R-41439, R-41441, R-41449, R-41453, R-41456, R-41460, R-41472, R-41485, R-41493, R-41539, R-41572, R-41582, R-41584</span></p><p><code>one-day-move</code> (5): <span class="ids svelte-1op6c6">R-41202, R-41209, R-41236, R-41344, R-41620</span></p><!--]--></details><!----> <h2>The three problems</h2> <p><strong><code>parser</code> · month and day flipped by the shared parser.</strong> Every tenant on file writes the day
+first. The shared parser reads month first, so a booking typed as 7 April goes out as 4 July. It hits
+every channel of every tenant. This is the bug the queued fix is for.</p> <p><strong><code>hint</code> · month and day flipped by the booking-v3 form.</strong> The booking-v3 form prints <code>MM/DD/YYYY</code> under its date field. People type what the hint says, month first, and the form reads it
+the tenant’s way, day first. Same symptom, other direction, different code: fixing the parser does not
+touch it. Only booking-v3 tenants, only through the form.</p> <p><strong><code>one-day-move</code> · the date moves by one day.</strong> No flip. One meeting shows Tuesday in Lisbon and
+Monday in Toronto; 6 October shows as a Monday; a whole month is one day off. The desk’s notes mark
+these reports as a one-day move, and the #4471 table hides them inside the tenant’s cause. A day
+boundary is being crossed somewhere between the booking’s time zone and the invite’s.</p> <h2>How to tell them apart</h2> <ol><li>Is the date flipped (day and month swapped) or moved by one day? Moved: <code>one-day-move</code>.</li> <li>Flipped and the report came through the booking form of a booking-v3 tenant: <code>hint</code>.</li> <li>Flipped, anything else: <code>parser</code>.</li></ol> <p>Intake’s tag cannot do this. It guesses from the reporter’s browser language, and the browser
+language says nothing about the tenant’s booking form or channel. The table above counts how often
+the guess was right.</p> <h2>What changes on the desk</h2> <ul><li>Close nothing on #4471 when the parser fix ships. Check the <code>hint</code> and <code>one-day-move</code> tickets
+separately; their reports will keep coming.</li> <li>Subject lines did not tell these apart, and bodies did. Reading one body per tenant and channel
+would have split the ticket in April.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-MDKH-F6ZQ</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_11ee05u = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.DIIucJmM.js"),
+						import("../../_app/immutable/entry/app.DZY_l-Ou.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

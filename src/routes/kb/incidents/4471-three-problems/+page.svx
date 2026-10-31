@@ -1,0 +1,72 @@
+---
+layout: runbook
+title: '#4471 · what it shows: three problems, not one'
+owner: robert-matusewicz
+status: proposed
+reviewed: 2026-10-31
+signature: Robert Matusewicz
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const repo = 'https://github.com/robert-matusewicz/mega-s01e03-what-it-shows';
+  const issues = {
+    parser: `${repo}/issues/1`,
+    hint: `${repo}/issues/2`,
+    'one-day-move': `${repo}/issues/3`,
+  };
+</script>
+
+The [#4471 page](/kb/incidents/4471) says "one issue, one fix queued". Its own table, built from the
+export at render time, has said otherwise since the day it was written: two causes, and a footnote
+about reports read as a one-day move. This page reads the same data and gives each problem a count
+and a ticket of its own.
+
+<Callout kind="warn">
+
+Three problems were merged into #4471 because their subject lines matched
+([decision 0001](/kb/decisions/0001-dedupe-by-subject)). One queued fix covers one of them.
+
+</Callout>
+
+## What #4471 holds
+
+<ProblemTable ticket={4471} {issues} />
+
+## The three problems
+
+**`parser` · month and day flipped by the shared parser.** Every tenant on file writes the day
+first. The shared parser reads month first, so a booking typed as 7 April goes out as 4 July. It hits
+every channel of every tenant. This is the bug the queued fix is for.
+
+**`hint` · month and day flipped by the booking-v3 form.** The booking-v3 form prints
+`MM/DD/YYYY` under its date field. People type what the hint says, month first, and the form reads it
+the tenant's way, day first. Same symptom, other direction, different code: fixing the parser does not
+touch it. Only booking-v3 tenants, only through the form.
+
+**`one-day-move` · the date moves by one day.** No flip. One meeting shows Tuesday in Lisbon and
+Monday in Toronto; 6 October shows as a Monday; a whole month is one day off. The desk's notes mark
+these reports as a one-day move, and the #4471 table hides them inside the tenant's cause. A day
+boundary is being crossed somewhere between the booking's time zone and the invite's.
+
+## How to tell them apart
+
+1. Is the date flipped (day and month swapped) or moved by one day? Moved: `one-day-move`.
+2. Flipped and the report came through the booking form of a booking-v3 tenant: `hint`.
+3. Flipped, anything else: `parser`.
+
+Intake's tag cannot do this. It guesses from the reporter's browser language, and the browser
+language says nothing about the tenant's booking form or channel. The table above counts how often
+the guess was right.
+
+## What changes on the desk
+
+- Close nothing on #4471 when the parser fix ships. Check the `hint` and `one-day-move` tickets
+  separately; their reports will keep coming.
+- Subject lines did not tell these apart, and bodies did. Reading one body per tenant and channel
+  would have split the ticket in April.
+
+<RenderStamp {signature} />
